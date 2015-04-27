@@ -1,5 +1,4 @@
 import urllib2
-
 from bs4 import BeautifulSoup as BS
 
 
@@ -42,7 +41,7 @@ def get_profile(url):
 	content = urllib2.urlopen(url)
 	html_profile = BS(content)
 	string  = '<html>' + '<center>'
-	string += '<p>' + str(html_profile.find(attrs={'class':'ProfileNameAndSig'}).find()).decode('utf-8') + '</p>'
+	string += '<p>' + str(html_profile.find(attrs={'class':'ProfileNameAndSig'})).decode('utf-8') + '</p>'
 	string += '<p>' + str(html_profile.find(attrs={'class':'profile_photo_img'})).decode('utf-8') + '</p>'
 	string += '<b>' + '<p>' + str(html_profile.find(attrs={'class':'count'}).text) + ' Followers' + '</p>' + '</b>'
 	string += '</center>' + '</html>'
